@@ -1,0 +1,32 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/data
+include ../helpers/mixins
+
++b.vfixed._md-top
+	+b.vnav._style
+		+e.container.vcontainer
+			+e.row.vrow.vflex-y-center
+				+e.logo.vcol-8.vcol-md-3
+					+b.vhamburger(type="button" id="js-vnav__btn")
+						+e.SPAN.lines
+							span Line1
+							span Line2
+							span Line3
+						//+e.SPAN.text Menu
+					.inline-block
+						img(src="img/logo.png" alt="")
+				+e.NAV.menu.vcol-12.vcol-md-6#navigation
+					ul
+						for item in navigation
+							+menu-item('true', item.link, item.name)
+						+menu-item
+							+b.BUTTON.vbtn._navigation(data-action="v-modal" data-open="#form") Button
+				+e.text.vcol-4.vcol-md-3#js-nav-text
+					+e.text-toggle.js-vnav-toggle
+						span
+						span
+						span
+					+e.text-links.js-vnav-links
+						+e.A.text-links-inner +99 999 999 99
+						+e.A.text-links-inner._hidden +99 999 999 99

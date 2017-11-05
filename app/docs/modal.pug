@@ -1,0 +1,26 @@
+extends layout
+block head
+  +add-meta('Unit Test - Index')
+block intro
+  +intro('Modal', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa repellat quia totam ab doloribus!')
+block content
+  +e.section
+    +title('Modal example')
+    +e.group
+      +b.BUTTON.vbtn(data-action="vmodal" data-open="#example-id") Open Modal
+      +b.vmodal#example-id
+        +e.box._default
+          +e.header
+            +e.P.title Modal title
+            +e.BUTTON.close(data-close="vmodal") &times;
+          +e.body
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et modi, deleniti voluptate rem, recusandae, reprehenderit harum deserunt veniam sequi dignissimos possimus eos debitis! Repellat nostrum dolores qui recusandae quos assumenda!
+      pre
+        | +b.BUTTON.vbtn(data-action="vmodal" data-open="#example-id") Open Modal
+        | +b.vmodal#example-id
+        |   +e.box._default
+        |     +e.header
+        |       +e.P.title Modal title
+        |       +e.BUTTON.close(data-close="vmodal") &times;
+        |     +e.body
+        |       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et modi, deleniti voluptate rem

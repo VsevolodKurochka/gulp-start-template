@@ -1,0 +1,28 @@
+/// Getting the color value from the map
+/// @access public
+/// @param {String} $color - color name 
+/// @return {String}
+/// @require $colors
+@function setColor($color, $tone: 'base'){
+  @if map-has-key($colors, $color){
+  	@return map-get(map-get($colors, $color), $tone);
+  }@else{
+  	@error $error-color + ''#{$color}'';
+  }
+}
+@function getComp($comp, $map: $grid-system){
+	@return map-get($map,$comp);
+}
+
+/// Getting the z-index value from the layer name
+/// @access public
+/// @param {String} $layer - Имя слоя
+/// @return {Number}
+/// @require $z-indexes
+@function z($layer){
+	@if map-has-key($z-indexes, $layer){
+		@return map-get($z-indexes, $layer);
+	}@else{
+		@error 'No layer with name '#{$layer}' in $z-indexes. The layer must be one of the '#{map-keys($z-indexes)}' .';
+	}
+}

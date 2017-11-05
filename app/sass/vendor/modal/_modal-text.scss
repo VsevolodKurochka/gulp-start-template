@@ -1,0 +1,31 @@
+.#{$themeModal}{
+	&__body{
+		font-size: 15px;
+		color: #616161;
+	}
+	&__inner{
+		max-height: 60vh;
+		overflow-y: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+		-webkit-overflow-scrolling:touch;
+		p{
+			margin-bottom: 15px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		@include resp-min(sm){
+			max-height: 350px;
+			&::-webkit-scrollbar{
+				width: 7.5px;
+				&-track{
+					background-color: #ddd;
+				}
+				&-thumb{
+				  background-color: darkgrey;
+				}
+			}
+		}
+	}
+}

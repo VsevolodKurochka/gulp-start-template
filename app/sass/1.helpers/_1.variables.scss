@@ -1,0 +1,72 @@
+// Colors
+	
+	// Brand colors
+
+		$color-brand-1: #28a5f5 !default;
+		$color-brand-2: #f00 !default;
+
+	$color-success: #5cb85c !default;
+	$color-danger: #d9534f !default;
+
+	$color-responsive-menu: $color-brand-1 !default;
+
+
+// Dependencies
+
+	// Wordpress
+
+		$wordpress: false;
+
+	// Naming of classes
+
+		$themePrefix: 'v';
+
+		// Grid
+			//- Column
+				$themeColumn: $themePrefix + 'col';
+			//- Section
+				$themeSection: $themePrefix + 'section';
+			//- Container
+				$themeContainer: $themePrefix + 'container';
+			//- Row
+				$themeRow: $themePrefix + 'row';
+			//- Visibility
+			
+
+		//- Header
+			$themeHeader: $themePrefix + 'site-header';
+
+		//- Footer
+			$themeFooter: $themePrefix + 'site-footer';
+
+		//- Navigation
+			$themeNav: $themePrefix + 'nav';
+			$themeNavItem: '';
+			$themeNavItem: if($wordpress, 'menu-item', $themeNav + '__menu-item');
+
+			//- Navigation helpers
+				$themeFixed: $themePrefix + 'fixed';
+
+		// Form
+			$themeForm: $themePrefix + 'form';
+			
+			//- Design form ( 'old' or 'new' )
+				$themeFormDesign: 'old';
+
+		//- Button
+			$themeButton: $themePrefix + 'btn';
+
+			//- Effect
+				$themeButtonEffect: $themePrefix + 'effect';
+			
+		// Vendor
+
+			//- Modal
+				$themeModal: $themePrefix + 'modal';
+
+
+// Errors
+
+	// If not exists variable.
+		$error-variable: "This variable we do not have, sorry. Please try to change variable ";
+		$error-color: 'Invalid color name.';

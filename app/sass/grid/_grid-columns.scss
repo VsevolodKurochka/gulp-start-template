@@ -1,0 +1,36 @@
+/* -----------------------------------------------------------------------------
+  COLUMNS
+----------------------------------------------------------------------------- */
+@include make-column();
+@include resp-min(xs){
+  @include make-column(xs);
+}
+@include resp-min(sm){
+  @include make-column(sm);
+}
+@include resp-min(md){
+  @include make-column(md);
+}
+@include resp-min(lg){
+  @include make-column(lg);
+}
+@if getComp(flex) == true{
+	[class*=#{$themeColumn}]{
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include xOffset('padding', getComp(gutter));
+  }
+}@else{
+	%global-block{
+    position: relative;
+    min-height: 1px;
+    @include xOffset('padding', getComp(gutter));
+  }
+	[class*=#{$themeColumn}]{
+    @extend %global-block;
+    float: left;
+  }
+}
+/* -----------------------------------------------------------------------------
+  COLUMNS
+----------------------------------------------------------------------------- */

@@ -1,0 +1,22 @@
+.#{$themeModal}{
+	&__close{
+		display: block;
+		width: 40px;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		font-size: 40px;
+		font-weight: 900;
+		line-height: 1;
+		z-index: z('default');
+		-webkit-tap-highlight-color: transparent;
+		@include transition();
+		&:hover{
+			color: setColor('brand-1');
+			transform: rotate(180deg);
+		}
+	}
+}

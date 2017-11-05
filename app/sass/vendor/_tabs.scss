@@ -1,0 +1,84 @@
+%vtabs-transition{
+  @include transition();
+}
+
+.vtabs{
+  &-wrap,
+  &-links,
+  &-content{
+    @include cf();
+  }
+  &-links{
+    margin-bottom: getComp(gutter) * 3;
+    text-align: center;
+  }
+  &-list{
+    display: inline-block;
+    font-size: 0;
+    a{
+      position: relative;
+      display: block;
+      min-width: 150px;
+      padding: 10px;
+      background-color: transparent;
+      text-decoration: none;
+      color: inherit;     
+      font-size: 18px;
+      @extend %vtabs-transition;
+      &:after{
+        @include pseudo();
+        left: 0;
+        bottom: -15px;
+        width: 100%;
+        height: 5px;
+        opacity: 1;
+        transform: translateY(-7.5px);
+        @extend %vtabs-transition;
+      }
+      &:hover{
+        @extend %effectTab;
+      }
+    }
+    li{
+      display: block;
+      &.active{
+        a{
+          @extend %effectTab;
+        }
+      }
+    }
+    @at-root{
+      %effectTab{
+        color: setColor('brand-1');
+        &:after{
+          background-color: setColor('brand-1', 'light');
+          transform: none;
+        }
+      }
+    }
+  }
+  &-content{
+    &-inner{
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+  }
+  @include resp-min(sm){
+    &-list{
+      padding-bottom: 10px;
+      border-bottom: 5px solid setColor(dark, light);
+      li{
+        display: inline-block;
+      }
+    }
+  }
+  @include resp-max(sm){
+    &-list{
+      li:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

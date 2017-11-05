@@ -1,0 +1,25 @@
+.text{
+	&-uppercase{
+		text-transform: uppercase;
+	}
+	&-u{
+		text-decoration: underline;
+	}
+	&-dn{
+		text-decoration: none;
+	}
+	&-center{
+	 text-align: center;
+	}
+	&-left{
+	 text-align: left;
+	}
+	&-right{
+	 text-align: right;
+	}
+}
+.size{
+  &-zero{
+    font-size: 0;
+  }
+}

@@ -1,0 +1,28 @@
+/* -----------------------------------------------------------------------------
+  HIDDEN AND VISIBLE UTILITIES
+----------------------------------------------------------------------------- */
+.#{$themePrefix}hidden,
+%vvisible{
+  display: none !important;
+}
+@each $br-name, $br-value in $breakpoints{
+  .#{$themePrefix}visible-#{$br-name}{
+    @extend %vvisible;
+  }
+}
+@include resp-min(lg){
+  @include visibility(lg);
+}
+@include resp-min(md){
+  @include resp-max(lg){
+    @include visibility(md);
+  }
+}
+@include resp-min(sm){
+  @include resp-max(md){
+    @include visibility(sm);
+  }
+}
+@include resp-max(sm){
+  @include visibility(xs);
+}

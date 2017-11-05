@@ -1,0 +1,69 @@
+%btn-placeholder{
+  display: inline-block;
+  position: relative;
+  @include btn-size($btn-default-padding, $btn-default-size);
+  border: getComp('border', $btn-map);
+  border-radius: getComp('radius', $btn-map);
+  z-index: z('default');
+  overflow: hidden;
+  max-width: 100%;
+  text-decoration: none;
+  font-size: getComp('font-size', $btn-map);
+  line-height: getComp('line-height', $btn-map);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transform: translateZ(0);
+  @include transition();
+  @extend .bold !optional;
+}
+.#{$themeButton}{
+  @extend %btn-placeholder;
+  &-group{
+    font-size: 0;
+    .#{$themeButton}{
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  &_size{
+    &-lg{
+      @include btn-size($btn-large-padding, $btn-large-size);
+    }
+    &-fluid{
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &_shadow{
+    &-brand-1{
+      box-shadow: 0 3px 8px 1px transparentize(setColor('brand-1'), 0.5);
+    }
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  &_navigation{
+    background-color: setColor('menu', 'light');
+    @include resp-max(md){
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      text-align: left;
+    }
+    @include resp-min(md){
+      background-color: setColor('brand-1');
+    }
+  }
+
+  //-
+  //- Iteration button fluid color
+  //-
+
+  @include btn-static-iteration();
+
+  //-
+  //- Iteration button border-color
+  //-
+  @include btn-border-iteration();
+}

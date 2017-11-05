@@ -1,0 +1,9 @@
+.#{$list-name}{
+  list-style: none;
+  li{
+    position: relative;
+    &:after{
+      @include pseudo();
+    }
+  }
+}

@@ -1,0 +1,28 @@
+%vtitle-default{
+	margin-top: 10px;
+	margin-bottom: 15px;
+	line-height: 1.2;
+	font-weight: normal;
+}
+.vtitle{
+	&-xs{
+		font-size: 18px;
+		@include fs('vtitle-xs');
+		@extend %vtitle-default;
+	}
+	&-sm{
+		font-size: 20px;
+		@include fs('vtitle-sm');
+		@extend %vtitle-default;
+	}
+	&-md{
+		font-size: 25px;
+		@include fs('vtitle-md');
+		@extend %vtitle-default;
+	}
+	&-lg{
+		font-size: 30px;
+		@include fs('vtitle-lg');
+		@extend %vtitle-default;
+	}
+}

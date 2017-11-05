@@ -1,0 +1,30 @@
+.#{$themeModal}{
+	$self: &;
+	&__box{
+		position: relative;
+		margin: 30px auto;
+		padding: 40px 15px 30px;
+		background-color: setColor('white');
+		box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24);
+		transform: translateY(-200%);
+		@extend %modalTransition;
+		&_white{
+			background-color: setColor('white');
+		}
+		#{$self}_showing_in &{
+			transform: none;
+		}
+		@include resp-min(xs){
+			padding: 48px 24px;
+			&_default{
+				width: 460px;
+			}
+		}
+		@include resp-min(sm){
+			&_big{
+				width: 600px;
+				margin: 30px auto;
+			}
+		}
+	}
+}

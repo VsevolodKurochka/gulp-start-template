@@ -1,0 +1,10 @@
+.#{$themeModal}{
+	&__video{
+		margin-top: 30px;
+	}
+	&__iframe{
+		display: block;
+		width: 100%;
+		min-height: 300px;
+	}
+}

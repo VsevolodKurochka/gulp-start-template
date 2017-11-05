@@ -1,0 +1,11 @@
+.inline-block{
+  display: inline-block;
+}
+.ovh{
+  overflow: hidden;
+}
+@for $i from 1 through 3{
+  .index-#{$i}{
+    z-index: $i;
+  }
+}

@@ -1,0 +1,19 @@
+//@include connect-font(ProximaRegular,regular);
+//@include connect-font(ProximaLight,light);
+//@include connect-font(ProximaBold,bold);
+//@include connect-font(ProximaBlack,black);
+.general-font{
+	font-family: 'Roboto', sans-serif;
+}
+$font-weights: (
+	'regular' : 400,
+	'light'   : 300,
+	'bold'    : 700,
+	'black'   : 900
+);
+
+@each $name, $weight in $font-weights{
+	.#{$name}{
+		font-weight: $weight;
+	}
+}

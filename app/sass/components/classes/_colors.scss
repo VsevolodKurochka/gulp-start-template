@@ -1,0 +1,13 @@
+.color{
+  &-brand{
+    &-1{
+      color: setColor('brand-1');
+    }
+    &-2{
+      color: setColor('brand-2');
+    }
+  }
+  &-black{
+    color: setColor('dark', 'black');
+  }
+}
